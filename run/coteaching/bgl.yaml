@@ -1,0 +1,55 @@
+
+# data set
+data_set : "bgl_SPLIT"
+if_clean : "noisy_8"
+seq_len : 512
+max_len : 512
+if_predict : True
+store_embedding: True
+min_num_candidates : 15
+num_candidates_ratio: 0.1
+lr : 0.001
+
+# features
+is_logkey : True
+is_time : False
+is_label : True   #if train with labels
+
+hypersphere_loss_test : False
+
+scale : None # MinMaxScaler()
+
+# model
+seed: 1234
+hidden : 256 # embedding size
+layers : 4
+attn_heads : 4
+output_attentions : True
+tracking : True
+corpus_lines : None
+on_memory : True
+num_workers : 4
+mask_ratio : 0.5
+
+
+# train
+warmup_epochs : 200
+n_epochs_stop : 5
+batch_size : 32
+adam_beta1 : 0.9
+adam_beta2 : 0.999
+adam_weight_decay : 0.00
+with_cuda: True
+cuda_devices : None
+log_freq : None
+
+# predict
+gaussian_mean : 0
+gaussian_std : 1
+test_ratio: 1
+
+
+robust_method : "coteaching_norm"
+
+
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH --job-name='b_ens_20'
+#SBATCH --mem-per-gpu=20G
+#SBATCH -N 1
+#SBATCH --gres=gpu:1
+#SBATCH --exclude=gpu-4-04,gpu-4-03
+##SBATCH -C V100|T4
+##SBATCH -C P100|V100|T4|K80
+
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate my_env1
+
+cd ~/work/Pluto_submission/main
+
+#python vocab_main.py --config=$1
+python train_main.py --config=$1 --node=$SLURM_JOB_NODELIST
+
+conda deactivate

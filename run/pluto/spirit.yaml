@@ -1,0 +1,59 @@
+# data set
+data_set : "spirit_admin_split"
+if_clean : "noisy_1"
+seq_len : 256
+max_len : 256
+store_embedding: False
+if_predict : False
+lr : 0.001
+num_candidates_ratio: 0.045
+
+
+# features
+is_logkey : True
+is_time : False
+is_label : True   #if train with labels
+
+hypersphere_loss_test : False
+
+scale : None # MinMaxScaler()
+
+# model
+seed: 1234
+hidden : 256 # embedding size
+layers : 4
+attn_heads : 4
+output_attentions : True
+tracking : True
+corpus_lines : None
+on_memory : True
+num_workers : 4
+mask_ratio : 0.7
+
+
+# train
+use_warmup_model: True
+selection_epochs: 21
+selection_gap: 10
+retrain_epochs: 200
+
+n_epochs_stop : 5
+batch_size : 32
+
+adam_beta1 : 0.9
+adam_beta2 : 0.999
+adam_weight_decay : 0.00
+with_cuda: True
+cuda_devices : None
+log_freq : None
+
+# predict
+
+gaussian_mean : 0
+gaussian_std : 1
+test_ratio: 1
+outlier_cluster_thres: 85
+robust_method : "pluto"
+
+
+

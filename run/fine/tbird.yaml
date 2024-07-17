@@ -1,0 +1,60 @@
+# data set
+data_set : "tbird_5-7M_SPLIT"
+if_clean : "noisy_1"
+seq_len : 256
+max_len : 256
+store_embedding: False
+if_predict : True
+lr : 0.001
+num_candidates_ratio: 0.2
+
+
+# features
+is_logkey : True
+is_time : False
+is_label : True   #if train with labels
+
+hypersphere_loss_test : False
+
+scale : None # MinMaxScaler()
+
+# model
+seed: 1234
+hidden : 256 # embedding size
+layers : 4
+attn_heads : 4
+output_attentions : True
+tracking : True
+corpus_lines : None
+on_memory : True
+num_workers : 4
+mask_ratio : 0.5
+
+n_epochs_stop : 5
+batch_size : 64
+
+# phase checker
+use_warmup_model: True
+selection_epochs: 200
+selection_gap: 5
+
+adam_beta1 : 0.9
+adam_beta2 : 0.999
+adam_weight_decay : 0.00
+with_cuda: True
+cuda_devices : None
+log_freq : None
+
+# predict
+
+
+gaussian_mean : 0
+gaussian_std : 1
+test_ratio: 1
+
+
+robust_method : "fine+"
+
+
+
+

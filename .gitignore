@@ -1,0 +1,9 @@
+/output/hdfs/HDFS.log_structured.csv
+/output/hdfs/HDFS.log_templates.csv
+/output/hdfs/hdfs_sequence.csv
+/output/hdfs/test_abnormal
+/output/hdfs/test_normal
+/output/hdfs/train
+/output/hdfs/dirty_0.05/bk/test_abnormal
+/output/hdfs/dirty_0.05/bk/test_normal
+/output/hdfs/dirty_0.05/bk/train

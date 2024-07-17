@@ -1,0 +1,67 @@
+# data set
+data_set : "HDFS_SPLIT"
+if_clean : "noisy_3"
+seq_len : 512
+max_len : 512
+store_embedding: False
+if_predict : False
+lr : 0.0001
+
+num_candidates_ratio: 0.15
+
+
+# features
+is_logkey : True
+is_time : False
+is_label : True   #if train with labels
+
+hypersphere_loss_test : False
+
+scale : None # MinMaxScaler()
+
+# model
+seed: 1234
+hidden : 256 # embedding size
+layers : 4
+attn_heads : 4
+output_attentions : True
+tracking : True
+corpus_lines : None
+on_memory : True
+num_workers : 4
+mask_ratio : 0.7
+
+
+# train
+seq_thres: 0.0
+outlier_cluster_thres: 90
+
+n_epochs_stop : 5
+batch_size : 32
+
+# phase checker
+use_warmup_model: True
+selection_epochs: 30
+selection_gap: 5
+retrain_epochs: 150
+
+adam_beta1 : 0.9
+adam_beta2 : 0.999
+adam_weight_decay : 0.00
+with_cuda: True
+cuda_devices : None
+log_freq : None
+
+# predict
+
+
+gaussian_mean : 0
+gaussian_std : 1
+test_ratio: 1
+
+
+robust_method : "pluto"
+
+
+
+
